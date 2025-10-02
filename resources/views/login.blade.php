@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-gradient-to-br from-sky-900 to-sky-800 flex items-center justify-center min-h-screen p-6">
+<body class="bg-gradient-to-br from-sky-900 to-sky-800 flex flex-col items-center justify-center min-h-screen p-6">
 
     <!-- NAVBAR -->
     <nav class="bg-sky-950 sticky w-full z-50 top-0 shadow-md">
