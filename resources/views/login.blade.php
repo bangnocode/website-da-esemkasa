@@ -9,10 +9,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-gradient-to-br from-sky-900 to-sky-800 flex flex-col items-center justify-center min-h-screen p-6">
+<body class="bg-gradient-to-br from-sky-900 to-sky-800 flex items-center justify-center min-h-screen px-4 pb-8 pt-24">
 
     <!-- NAVBAR -->
-    <nav class="bg-sky-950 w-full shadow-md">
+    <nav class="bg-sky-950 fixed w-full z-50 top-0 shadow-md">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 md:px-8">
             <!-- Logo -->
             <a href="{{ url('/') }}" class="flex items-center gap-3">
@@ -51,44 +51,46 @@
                         <a href="{{ url('/berita') }}"
                             class="block py-2 px-3 rounded-md text-white hover:bg-sky-800 md:hover:bg-transparent md:hover:text-yellow-400 md:p-0">Berita</a>
                     </li>
-
                 </ul>
             </div>
         </div>
     </nav>
 
+    <!-- CARD LOGIN -->
     <div
-        class="bg-white/95 backdrop-blur-lg rounded-2xl shadow-xl p-8 w-full max-w-md transition transform hover:-translate-y-1 hover:shadow-2xl">
+        class="bg-white/95 backdrop-blur-lg rounded-2xl shadow-xl p-8 w-full max-w-md mt-4 transition transform hover:-translate-y-1 hover:shadow-2xl">
 
         <!-- Header -->
         <div class="text-center mb-6">
-            <div class="flex justify-center gap-3 mb-4">
+            <div class="flex justify-center gap-4 mb-4">
                 <img src="{{ asset('img/logo_smea.png') }}" alt="Logo SMKN 1 Banyuwangi" class="w-12 drop-shadow">
                 <img src="{{ asset('img/dewan-ambalan.png') }}" alt="Logo Dewan Ambalan" class="w-12 drop-shadow">
             </div>
             <h1 class="text-2xl font-bold text-gray-800">Selamat Datang</h1>
-            <p class="text-gray-600 text-sm mt-2 leading-relaxed">
+            <p class="text-gray-600 text-sm mt-3 leading-relaxed">
                 Gunakan hak suara Anda dengan bijak, karena satu suara sangat berarti.
-                <br><br> Masukkan token anda untuk memulai pemilihan
+                <br>Masukkan token anda untuk memulai pemilihan.
             </p>
         </div>
 
-        <form method="POST" action="{{ route('login.process') }}">
+        <!-- Form -->
+        <form method="POST" action="{{ route('login.process') }}" class="space-y-5">
             @csrf
-            <div class="mb-4">
+            <div>
                 <label for="token" class="block text-slate-700 font-medium mb-2">Masukkan Token</label>
                 <input type="text" name="token_peserta" id="token" maxlength="6" required
-                    class="w-full border border-slate-300 px-4 py-2 rounded-lg focus:ring-2 focus:ring-sky-400 focus:outline-none uppercase">
+                    class="w-full border border-slate-300 px-4 py-3 rounded-lg focus:ring-2 focus:ring-sky-400 focus:outline-none uppercase">
             </div>
 
             <button type="submit"
-                class="block w-full text-center bg-gradient-to-r from-sky-600 to-sky-700 hover:from-sky-700 hover:to-sky-800 text-white font-semibold py-3 rounded-xl shadow-md transition transform hover:-translate-y-0.5">
+                class="w-full text-center bg-gradient-to-r from-sky-600 to-sky-700 hover:from-sky-700 hover:to-sky-800 text-white font-semibold py-3 rounded-xl shadow-md transition transform hover:-translate-y-0.5">
                 Masuk
             </button>
         </form>
 
+        <!-- Error -->
         @if (session('error'))
-            <div class="my-4 p-3 bg-red-100 text-red-700 rounded-lg text-center">
+            <div class="mt-5 p-3 bg-red-100 text-red-700 rounded-lg text-center text-sm">
                 {{ session('error') }}
             </div>
         @endif
