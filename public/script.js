@@ -1,20 +1,19 @@
-document.addEventListener("click", function (event) {
-    const menu = document.getElementById("navbar-sticky");
-    const button = document.querySelector("[data-collapse-toggle='navbar-sticky']");
 
-    // kalau menu sedang terbuka dan klik bukan di menu & bukan di button
-    if (menu.classList.contains("block") && !menu.contains(event.target) && !button.contains(event
-        .target)) {
-        menu.classList.add("hidden");
-        menu.classList.remove("block");
-    }
-});
+document.addEventListener("DOMContentLoaded", () => {
+    const toggleBtn = document.querySelector("[data-collapse-toggle]");
+    const navbarMenu = document.getElementById("navbar-sticky");
 
-// toggle menu buka/tutup ketika tombol diklik
-const button = document.querySelector("[data-collapse-toggle='navbar-sticky']");
-const menu = document.getElementById("navbar-sticky");
+    // buka/tutup navbar
+    toggleBtn.addEventListener("click", () => {
+        navbarMenu.classList.toggle("hidden");
+    });
 
-button.addEventListener("click", () => {
-    menu.classList.toggle("hidden");
-    menu.classList.toggle("block");
+    // klik di luar navbar → close
+    document.addEventListener("click", (e) => {
+        if (!navbarMenu.classList.contains("hidden") &&
+            !navbarMenu.contains(e.target) &&
+            !toggleBtn.contains(e.target)) {
+            navbarMenu.classList.add("hidden");
+        }
+    });
 });
