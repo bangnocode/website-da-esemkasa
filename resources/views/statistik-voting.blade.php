@@ -1,12 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DA Esemkasa</title>
-    <link rel="icon" href="{{ asset('img/dewan-ambalan.png') }}">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <x-tag-head-for-s-e-o></x-tag-head-for-s-e-o>
 </head>
 <body class="bg-gradient-to-br from-slate-50 to-slate-100 min-h-screen flex items-center justify-center p-4">
     <h1 class="block lg:hidden font-bold">PAGE TIDAK SUPPORT DI UKURAN LAYAR ANDA</h1>

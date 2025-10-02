@@ -2,11 +2,7 @@
 <html lang="id">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DA Esemkasa</title>
-    <link rel="icon" href="{{ asset('img/dewan-ambalan.png') }}">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <x-tag-head-for-s-e-o></x-tag-head-for-s-e-o>
 </head>
 
 <body class="bg-gradient-to-br from-sky-900 to-sky-800 flex items-center justify-center min-h-screen p-6">
