@@ -154,6 +154,8 @@
 
     <x-footer-da-esemkasa></x-footer-da-esemkasa>
 
+    <script src="{{ asset('script.js') }}"></script>
+
 </body>
 
 </html>
