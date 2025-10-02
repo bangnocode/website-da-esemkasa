@@ -9,6 +9,6 @@
             <a href="{{ url('/galeri') }}" class="hover:underline">Galeri</a>
             <a href="{{ url('/berita') }}" class="hover:underline">Berita</a>
         </nav>
-        <p class="text-xs text-gray-300">© 2025 Dewan Ambalan SMKN 1 Banyuwangi. All Rights Reserved.</p>
+        <p class="text-xs text-gray-300">© 2025 Dewan Ambalan SMKN 1 Banyuwangi. <br> All Rights Reserved.</p>
     </div>
 </footer>
