@@ -17,7 +17,7 @@
             </a>
 
             <!-- Mobile Menu Button -->
-            <button data-collapse-toggle="navbar-sticky" type="button"
+            <button id="navbar-toggle" type="button"
                 class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-sky-800 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition">
                 <span class="sr-only">Open main menu</span>
                 <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">

@@ -1,6 +1,5 @@
-
 document.addEventListener("DOMContentLoaded", () => {
-    const toggleBtn = document.querySelector("[data-collapse-toggle]");
+    const toggleBtn = document.getElementById("navbar-toggle");
     const navbarMenu = document.getElementById("navbar-sticky");
 
     // buka/tutup navbar
@@ -8,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
         navbarMenu.classList.toggle("hidden");
     });
 
-    // klik di luar navbar → close
+    // klik di luar navbar → tutup
     document.addEventListener("click", (e) => {
         if (!navbarMenu.classList.contains("hidden") &&
             !navbarMenu.contains(e.target) &&

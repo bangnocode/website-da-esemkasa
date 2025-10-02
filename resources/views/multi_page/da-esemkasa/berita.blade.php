@@ -17,7 +17,7 @@
             </a>
 
             <!-- Mobile Menu Button -->
-            <button data-collapse-toggle="navbar-sticky" type="button"
+            <button id="navbar-toggle" type="button"
                 class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-sky-800 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition">
                 <span class="sr-only">Open main menu</span>
                 <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
@@ -68,7 +68,8 @@
             <a href="{{ url('/berita/PTA2025') }}" class="block">
                 <article
                     class="bg-white border rounded-lg shadow-md overflow-hidden hover:shadow-xl hover:scale-[1.02] transition-all duration-300">
-                    <img src="{{ asset('img/da-esemkasa/galeri/bg-banner_11zon.webp') }}" alt="PTA" class="w-full h-48 object-cover">
+                    <img src="{{ asset('img/da-esemkasa/galeri/bg-banner_11zon.webp') }}" alt="PTA"
+                        class="w-full h-48 object-cover">
                     <div class="p-6 space-y-3">
                         <h2 class="font-bold text-lg text-sky-900">
                             Penerimaan Tamu Ambalan & Diesnatalis SMK Negeri 1 Banyuwangi
@@ -86,7 +87,8 @@
             <a href="{{ url('/berita/open-recruitmen-da-2025') }}" class="block">
                 <article
                     class="bg-white border rounded-lg shadow-md overflow-hidden hover:shadow-xl hover:scale-[1.02] transition-all duration-300">
-                    <img src="{{ asset('img/da-esemkasa/galeri/IMG_1659_6_11zon.webp') }}" alt="Open Recruitment" class="w-full h-48 object-cover">
+                    <img src="{{ asset('img/da-esemkasa/galeri/IMG_1659_6_11zon.webp') }}" alt="Open Recruitment"
+                        class="w-full h-48 object-cover">
                     <div class="p-6 space-y-3">
                         <h2 class="font-bold text-lg text-sky-900">
                             Open Recruitment Anggota Dewan Ambalan
