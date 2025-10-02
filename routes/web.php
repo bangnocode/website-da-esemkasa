@@ -5,7 +5,7 @@ use App\Http\Controllers\VotingController;
 use Illuminate\Support\Facades\Route;
 
 // DA-Essemkasa
-Route::get('/', fn() => view('multi_page.da-esemkasa.index'));
+Route::get('/', fn() => view('multi_page.da-esemkasa.index'))->name('landing.page');
 Route::get('/kegiatan', fn() => view('multi_page.da-esemkasa.kegiatan'));
 Route::get('/berita', fn() => view('multi_page.da-esemkasa.berita'));
 Route::get('/galeri', fn() => view('multi_page.da-esemkasa.galeri'));

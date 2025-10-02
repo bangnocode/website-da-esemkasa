@@ -9,7 +9,7 @@
     content="Website resmi Dewan Ambalan Esemkasa SMKN 1 Banyuwangi. Informasi kegiatan, berita, dan galeri.">
 
 <!-- Keywords (tidak terlalu penting untuk Google, tapi bisa membantu di beberapa mesin pencari) -->
-<meta name="keywords" content="Dewan Ambalan, Esemkasa, SMKN 1 Banyuwangi, Pradana, Voting Ambalan, Pramuka Banyuwangi">
+<meta name="keywords" content="Dewan Ambalan, Dewan Ambalan SMKN 1  Banyuwangi, DA Esemkasa, Esemkasa, SMKN 1 Banyuwangi, Pradana, Voting Ambalan, Pramuka Banyuwangi">
 
 <!-- Robots -->
 <meta name="robots" content="index, follow">

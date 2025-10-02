@@ -47,6 +47,11 @@
             </div>
         @endif
 
+        <a href="{{ route('landing.page') }}"
+            class="inline-block px-6 py-3 mt-4 text-white bg-blue-600 rounded-xl shadow-md hover:bg-blue-700 hover:shadow-lg transition-all duration-300 ease-in-out">
+            Ingin Melihat Website Dewan Ambalan SMKN 1 Banyuwangi? <span class="font-semibold">Klik Disini</span>
+        </a>
+
 
         <!-- Footer -->
         <div class="text-center mt-8 pt-4 border-t border-gray-200">
