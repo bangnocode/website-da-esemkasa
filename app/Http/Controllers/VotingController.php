@@ -52,11 +52,11 @@ class VotingController extends Controller
         $fotoMapping = [
             1 => [
                 'pa' => 'foto_arthur.png',
-                'pi' => 'paslon1_pi.jpg'
+                'pi' => 'foto_astrella.png'
             ],
             2 => [
                 'pa' => 'foto_kenny.png',
-                'pi' => 'paslon2_pi.jpg'
+                'pi' => 'foto_nayla.png'
             ],
         ];
 
