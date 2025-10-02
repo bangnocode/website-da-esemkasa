@@ -4,8 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DA Esemkasa</title>
+    <title>DA ESEMKASA - Dewan Ambalan SMKN 1 Banyuwangi</title>
     <link rel="icon" href="{{ asset('img/dewan-ambalan.png') }}">
+
+    <!-- Open Graph (untuk preview di Facebook/WhatsApp/LinkedIn) -->
+    <meta property="og:title" content="DA ESEMKASA - Dewan Ambalan SMKN 1 Banyuwangi">
+    <meta property="og:description"
+        content="Selamat datang di halaman voting pradana Dewan Ambalan SMKN 1 Banyuwangi. Login dengan token Anda dan mulai berpartisipasi dalam pemilihan.">
+    <meta property="og:image" content="{{ asset('img/da-esemkasa/dewan-ambalan.png') }}">
+    <meta property="og:url" content="https://da-esemkasa.my.id/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card (untuk preview di Twitter/X) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="DA ESEMKASA - Dewan Ambalan SMKN 1 Banyuwangi">
+    <meta name="twitter:description"
+        content="Selamat datang di halaman voting pradana Dewan Ambalan SMKN 1 Banyuwangi. Login dengan token Anda dan mulai berpartisipasi dalam pemilihan.">
+    <meta name="twitter:image" content="{{ asset('img/da-esemkasa/dewan-ambalan.png') }}">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 </head>
