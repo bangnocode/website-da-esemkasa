@@ -7,7 +7,6 @@
     <title>DA Esemkasa</title>
     <link rel="icon" href="{{ asset('img/dewan-ambalan.png') }}">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
     <script defer src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 </head>
 
