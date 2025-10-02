@@ -125,7 +125,7 @@
         <script>
             Swal.fire({
                 title: "Berhasil!",
-                text: "Suara Anda Sudah Tersimpan!",
+                text: "Suara Anda berhasil tersimpan. Terima kasih telah berpartisipasi!",
                 icon: "success",
                 confirmButtonColor: "#0ea5e9"
             });
