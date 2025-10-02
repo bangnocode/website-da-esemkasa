@@ -11,6 +11,52 @@
 
 <body class="bg-gradient-to-br from-sky-900 to-sky-800 flex items-center justify-center min-h-screen p-6">
 
+    <!-- NAVBAR -->
+    <nav class="bg-sky-950 fixed w-full z-50 top-0 shadow-md">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 md:px-8">
+            <!-- Logo -->
+            <a href="{{ url('/') }}" class="flex items-center gap-3">
+                <img src="{{ asset('img/da-esemkasa/dewan-ambalan.png') }}" class="h-10 drop-shadow-md" alt="Logo">
+                <span class="text-xl font-semibold text-white tracking-wide">DA ESEMKASA</span>
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button data-collapse-toggle="navbar-sticky" type="button"
+                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-sky-800 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M1 1h15M1 7h15M1 13h15" />
+                </svg>
+            </button>
+
+            <!-- Menu Links -->
+            <div class="hidden w-full md:flex md:w-auto" id="navbar-sticky">
+                <ul
+                    class="flex flex-col p-4 md:p-0 mt-4 font-medium rounded-lg bg-sky-950 md:flex-row md:space-x-6 md:mt-0 md:border-0">
+                    <li>
+                        <a href="{{ url('/') }}"
+                            class="block py-2 px-3 text-black bg-yellow-500 rounded-md md:bg-transparent md:text-yellow-400 md:p-0"
+                            aria-current="page">Beranda</a>
+                    </li>
+                    <li>
+                        <a href="{{ url('/kegiatan') }}"
+                            class="block py-2 px-3 rounded-md text-white hover:bg-sky-800 md:hover:bg-transparent md:hover:text-yellow-400 md:p-0">Kegiatan</a>
+                    </li>
+                    <li>
+                        <a href="{{ url('/galeri') }}"
+                            class="block py-2 px-3 rounded-md text-white hover:bg-sky-800 md:hover:bg-transparent md:hover:text-yellow-400 md:p-0">Galeri</a>
+                    </li>
+                    <li>
+                        <a href="{{ url('/berita') }}"
+                            class="block py-2 px-3 rounded-md text-white hover:bg-sky-800 md:hover:bg-transparent md:hover:text-yellow-400 md:p-0">Berita</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <div
         class="bg-white/95 backdrop-blur-lg rounded-2xl shadow-xl p-8 w-full max-w-md transition transform hover:-translate-y-1 hover:shadow-2xl">
 
@@ -46,12 +92,6 @@
                 {{ session('error') }}
             </div>
         @endif
-
-        <a href="{{ route('landing.page') }}"
-            class="inline-block px-6 py-3 mt-4 text-white bg-blue-600 rounded-xl shadow-md hover:bg-blue-700 hover:shadow-lg transition-all duration-300 ease-in-out">
-            Ingin Melihat Website Dewan Ambalan SMKN 1 Banyuwangi? <span class="font-semibold">Klik Disini</span>
-        </a>
-
 
         <!-- Footer -->
         <div class="text-center mt-8 pt-4 border-t border-gray-200">
