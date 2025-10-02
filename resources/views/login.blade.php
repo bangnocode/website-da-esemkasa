@@ -12,7 +12,7 @@
 <body class="bg-gradient-to-br from-sky-900 to-sky-800 flex flex-col items-center justify-center min-h-screen p-6">
 
     <!-- NAVBAR -->
-    <nav class="bg-sky-950 sticky w-full z-50 top-0 shadow-md">
+    <nav class="bg-sky-950 w-full shadow-md">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 md:px-8">
             <!-- Logo -->
             <a href="{{ url('/') }}" class="flex items-center gap-3">
