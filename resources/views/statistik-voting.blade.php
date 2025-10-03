@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,13 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-gradient-to-br from-slate-50 to-slate-100 min-h-screen flex items-center justify-center p-4">
     <div class="max-w-4xl w-full bg-white shadow-xl rounded-3xl p-8 border border-slate-200">
         <!-- Header -->
         <div class="text-center mb-8">
-            <div class="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl mb-4 shadow-lg shadow-blue-500/30">
+            <div
+                class="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl mb-4 shadow-lg shadow-blue-500/30">
                 <span class="text-2xl">📊</span>
             </div>
             <h2 class="text-3xl font-bold text-slate-800 mb-2">Hasil Voting</h2>
@@ -29,7 +32,8 @@
                 <p class="text-xs font-semibold text-blue-600 uppercase tracking-wide mb-1">Total Suara</p>
                 <p class="text-2xl font-bold text-blue-900" id="totalVotes">-</p>
             </div>
-            <div class="bg-gradient-to-br from-emerald-50 to-emerald-100/50 rounded-xl p-4 border border-emerald-200/50">
+            <div
+                class="bg-gradient-to-br from-emerald-50 to-emerald-100/50 rounded-xl p-4 border border-emerald-200/50">
                 <p class="text-xs font-semibold text-emerald-600 uppercase tracking-wide mb-1">Partisipasi</p>
                 <p class="text-2xl font-bold text-emerald-900" id="partisipasi">-</p>
             </div>
@@ -38,23 +42,24 @@
 
     <script>
         const ctx = document.getElementById('voteChart').getContext('2d');
-        
+
         // ===== Data dari backend (Blade) =====
-        const labels = {!! json_encode($labels) !!};   // contoh: ["Kandidat 1", "Kandidat 2"]
-        const totals = {!! json_encode($totals) !!};   // contoh: [45, 52]
+        const labels = {!! json_encode($labels) !!}; // contoh: ["Kandidat 1", "Kandidat 2"]
+        const totals = {!! json_encode($totals) !!}; // contoh: [45, 52]
         const totalPeserta = {{ $totalPeserta ?? 97 }}; // default 97 kalau belum ada
-        
-        // ===== Hitung total suara =====
+
+        // Hitung total suara
         const totalVotes = totals.reduce((a, b) => a + b, 0);
         document.getElementById('totalVotes').textContent = totalVotes;
-        
-        // ===== Hitung partisipasi =====
+
+        // Hitung partisipasi
         const partisipasi = ((totalVotes / totalPeserta) * 100).toFixed(1) + "%";
         document.getElementById('partisipasi').textContent = partisipasi;
-        
+
+
         // ===== ChartJS =====
         const voteChart = new Chart(ctx, {
-            type: 'bar', 
+            type: 'bar',
             data: {
                 labels: labels,
                 datasets: [{
@@ -77,13 +82,20 @@
                 responsive: true,
                 maintainAspectRatio: true,
                 plugins: {
-                    legend: { display: false },
+                    legend: {
+                        display: false
+                    },
                     tooltip: {
                         backgroundColor: 'rgba(0, 0, 0, 0.8)',
                         padding: 12,
                         cornerRadius: 8,
-                        titleFont: { size: 14, weight: 'bold' },
-                        bodyFont: { size: 13 },
+                        titleFont: {
+                            size: 14,
+                            weight: 'bold'
+                        },
+                        bodyFont: {
+                            size: 13
+                        },
                         callbacks: {
                             label: function(context) {
                                 const percentage = ((context.raw / totalVotes) * 100).toFixed(1);
@@ -95,21 +107,36 @@
                 scales: {
                     y: {
                         beginAtZero: true,
-                        border: { display: false },
-                        grid: { color: 'rgba(148, 163, 184, 0.1)', drawTicks: false },
+                        border: {
+                            display: false
+                        },
+                        grid: {
+                            color: 'rgba(148, 163, 184, 0.1)',
+                            drawTicks: false
+                        },
                         ticks: {
                             stepSize: 10,
                             color: '#64748b',
-                            font: { size: 12, weight: '500' },
+                            font: {
+                                size: 12,
+                                weight: '500'
+                            },
                             padding: 8
                         }
                     },
                     x: {
-                        border: { display: false },
-                        grid: { display: false },
+                        border: {
+                            display: false
+                        },
+                        grid: {
+                            display: false
+                        },
                         ticks: {
                             color: '#1e293b',
-                            font: { size: 14, weight: '600' },
+                            font: {
+                                size: 14,
+                                weight: '600'
+                            },
                             padding: 8
                         }
                     }
@@ -118,4 +145,5 @@
         });
     </script>
 </body>
+
 </html>
