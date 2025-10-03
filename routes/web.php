@@ -25,5 +25,5 @@ Route::middleware('checkPeserta')->group(function () {
     Route::post('/voting/pradana', [VotingController::class, 'votePradana']);
 
     Route::get('/voting/confirm', [VotingController::class, 'confirm'])->name('voting.confirm');
-    Route::post('/voting/confirm', [VotingController::class, 'storeVote'])->name('voting.store')->middleware('throttle:1,1');
+    Route::post('/voting/confirm', [VotingController::class, 'storeVote'])->name('voting.store');
 });
