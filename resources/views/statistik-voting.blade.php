@@ -17,6 +17,7 @@
         <!-- Header -->
         <div class="text-center mb-8">
             <h2 class="text-3xl font-bold text-slate-800 mb-2">Hasil Voting Calon Pradana Periode 2025/2026</h2>
+            <h2 class="text-xl font-bold text-slate-800 mb-2">Dewan Ambalan SMK Negeri 1 Banyuwangi</h2>
         </div>
 
         <!-- Chart Container -->
