@@ -41,23 +41,22 @@
     </div>
 
     <script>
-        const labels = @json($labels); // ["Kandidat 1", "Kandidat 2"]
-        const totals = @json($totals); // [45, 52]
-        const totalPeserta = {{ $totalPeserta ?? 97 }};
+        const labels = @json($labels);
+        const totals = @json($totals);
+        const totalPeserta = {{ $totalPeserta }};
 
         console.log("Labels:", labels);
         console.log("Totals:", totals);
         console.log("Peserta:", totalPeserta);
 
-        // Total suara
         const totalVotes = totals.reduce((a, b) => a + b, 0);
         document.getElementById('totalVotes').textContent = totalVotes;
 
-        // Partisipasi
-        const partisipasi = ((totalVotes / totalPeserta) * 100).toFixed(1) + "%";
+        const partisipasi = totalPeserta > 0 ?
+            ((totalVotes / totalPeserta) * 100).toFixed(1) + "%" :
+            "0%";
         document.getElementById('partisipasi').textContent = partisipasi;
 
-        // ChartJS
         new Chart(document.getElementById('voteChart'), {
             type: 'bar',
             data: {
@@ -84,6 +83,11 @@
                                 return `${ctx.raw} suara (${percent}%)`;
                             }
                         }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
                     }
                 }
             }

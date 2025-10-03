@@ -14,7 +14,8 @@ class VotingController extends Controller
     {
         $data = HasilVote::select('paslon_pradana_id', DB::raw('count(*) as total'))
             ->groupBy('paslon_pradana_id')
-            ->pluck('total', 'paslon_pradana_id');
+            ->get()
+            ->toArray();
 
         $totalPeserta = 97;
 
@@ -23,12 +24,14 @@ class VotingController extends Controller
             2 => 'Kennie Lionel Juano (PA) & Alvy Andini Nayla F (PI)',
         ];
 
-        // ubah jadi array biasa
-        $labels = $data->keys()->map(function ($id) use ($customLabels) {
-            return $customLabels[$id] ?? 'Kandidat ' . $id;
-        })->values()->all();
+        // Ubah data ke array murni
+        $labels = [];
+        $totals = [];
 
-        $totals = $data->values()->all();
+        foreach ($data as $row) {
+            $labels[] = $customLabels[$row['paslon_pradana_id']] ?? 'Kandidat ' . $row['paslon_pradana_id'];
+            $totals[] = (int) $row['total'];
+        }
 
         return view('statistik-voting', [
             'labels'       => $labels,
@@ -36,6 +39,7 @@ class VotingController extends Controller
             'totalPeserta' => $totalPeserta
         ]);
     }
+
 
 
     public function showSession()
