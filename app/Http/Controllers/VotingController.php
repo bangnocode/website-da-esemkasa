@@ -22,7 +22,7 @@ class VotingController extends Controller
         // label kandidat bisa di-custom manual
         $customLabels = [
             1 => 'Mohammad Al Arthur (PA) & Astrella Ramadhani (PI)',
-            2 => 'Kennie Lionel Juano (PA) & Alvy Andini Nayla F (PI)'
+            2 => 'Kennie Lionel Juano (PA) & Alvy Andini Nayla F (PI)',
         ];
 
         // ubah key id jadi nama kandidat
@@ -31,8 +31,8 @@ class VotingController extends Controller
         });
 
         return view('statistik-voting', [
-            'labels'       => $labels,
-            'totals'       => $data->values(),
+            'labels'       => $labels->values()->toArray(),   // ubah ke array
+            'totals'       => $data->values()->toArray(),     // ubah ke array
             'totalPeserta' => $totalPeserta
         ]);
     }

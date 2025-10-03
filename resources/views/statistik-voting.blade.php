@@ -43,21 +43,22 @@
     <script>
         const ctx = document.getElementById('voteChart').getContext('2d');
 
-        // ===== Data dari backend (Blade) =====
-        const labels = {!! json_encode($labels) !!}; // contoh: ["Kandidat 1", "Kandidat 2"]
-        const totals = {!! json_encode($totals) !!}; // contoh: [45, 52]
-        const totalPeserta = {{ $totalPeserta ?? 97 }}; // default 97 kalau belum ada
+        // Data dari backend (Laravel Blade)
+        const labels = @json($labels);       // ["Kandidat 1", "Kandidat 2"]
+        const totals = @json($totals);       // [45, 52]
+        const totalPeserta = {{ $totalPeserta }};
 
         // Hitung total suara
         const totalVotes = totals.reduce((a, b) => a + b, 0);
         document.getElementById('totalVotes').textContent = totalVotes;
 
         // Hitung partisipasi
-        const partisipasi = ((totalVotes / totalPeserta) * 100).toFixed(1) + "%";
+        const partisipasi = totalPeserta > 0
+            ? ((totalVotes / totalPeserta) * 100).toFixed(1) + "%"
+            : "0%";
         document.getElementById('partisipasi').textContent = partisipasi;
 
-
-        // ===== ChartJS =====
+        // ChartJS
         const voteChart = new Chart(ctx, {
             type: 'bar',
             data: {
@@ -82,20 +83,13 @@
                 responsive: true,
                 maintainAspectRatio: true,
                 plugins: {
-                    legend: {
-                        display: false
-                    },
+                    legend: { display: false },
                     tooltip: {
                         backgroundColor: 'rgba(0, 0, 0, 0.8)',
                         padding: 12,
                         cornerRadius: 8,
-                        titleFont: {
-                            size: 14,
-                            weight: 'bold'
-                        },
-                        bodyFont: {
-                            size: 13
-                        },
+                        titleFont: { size: 14, weight: 'bold' },
+                        bodyFont: { size: 13 },
                         callbacks: {
                             label: function(context) {
                                 const percentage = ((context.raw / totalVotes) * 100).toFixed(1);
@@ -107,36 +101,21 @@
                 scales: {
                     y: {
                         beginAtZero: true,
-                        border: {
-                            display: false
-                        },
-                        grid: {
-                            color: 'rgba(148, 163, 184, 0.1)',
-                            drawTicks: false
-                        },
+                        border: { display: false },
+                        grid: { color: 'rgba(148, 163, 184, 0.1)', drawTicks: false },
                         ticks: {
                             stepSize: 10,
                             color: '#64748b',
-                            font: {
-                                size: 12,
-                                weight: '500'
-                            },
+                            font: { size: 12, weight: '500' },
                             padding: 8
                         }
                     },
                     x: {
-                        border: {
-                            display: false
-                        },
-                        grid: {
-                            display: false
-                        },
+                        border: { display: false },
+                        grid: { display: false },
                         ticks: {
                             color: '#1e293b',
-                            font: {
-                                size: 14,
-                                weight: '600'
-                            },
+                            font: { size: 14, weight: '600' },
                             padding: 8
                         }
                     }
@@ -145,5 +124,4 @@
         });
     </script>
 </body>
-
 </html>
