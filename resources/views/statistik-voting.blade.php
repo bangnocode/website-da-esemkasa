@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DA Esemkasa</title>
-    <link rel="icon" href="{{ asset('img/dewan-ambalan.png') }}">
+    <title>Statistik Voting</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gradient-to-br from-slate-50 to-slate-100 min-h-screen flex items-center justify-center p-4">
-    <h1 class="block lg:hidden font-bold">PAGE TIDAK SUPPORT DI UKURAN LAYAR ANDA</h1>
-    <div class="hidden lg:block max-w-4xl w-full bg-white shadow-xl rounded-3xl p-8 border border-slate-200">
+    <div class="max-w-4xl w-full bg-white shadow-xl rounded-3xl p-8 border border-slate-200">
         <!-- Header -->
         <div class="text-center mb-8">
-            <h2 class="text-3xl font-bold text-slate-800 mb-2">Hasil Voting Pradana Periode 2025/2026</h2>
+            <div class="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl mb-4 shadow-lg shadow-blue-500/30">
+                <span class="text-2xl">📊</span>
+            </div>
+            <h2 class="text-3xl font-bold text-slate-800 mb-2">Hasil Voting</h2>
+            <p class="text-slate-500 text-sm">Real-time voting statistics</p>
         </div>
 
         <!-- Chart Container -->
