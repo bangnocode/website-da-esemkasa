@@ -31,8 +31,8 @@ class VotingController extends Controller
         });
 
         return view('statistik-voting', [
-            'labels'       => $labels->values()->toArray(),   // ubah ke array
-            'totals'       => $data->values()->toArray(),     // ubah ke array
+            'labels'       => array_values($labels->toArray()),
+            'totals'       => array_values($data->toArray()),
             'totalPeserta' => $totalPeserta
         ]);
     }

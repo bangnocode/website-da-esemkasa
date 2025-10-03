@@ -30,12 +30,12 @@
         <div class="grid grid-cols-2 gap-4 mt-6">
             <div class="bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-xl p-4 border border-blue-200/50">
                 <p class="text-xs font-semibold text-blue-600 uppercase tracking-wide mb-1">Total Suara</p>
-                <p class="text-2xl font-bold text-blue-900" id="totalVotes">-</p>
+                <p class="text-2xl font-bold text-blue-900" id="totalVotes"></p>
             </div>
             <div
                 class="bg-gradient-to-br from-emerald-50 to-emerald-100/50 rounded-xl p-4 border border-emerald-200/50">
                 <p class="text-xs font-semibold text-emerald-600 uppercase tracking-wide mb-1">Partisipasi</p>
-                <p class="text-2xl font-bold text-emerald-900" id="partisipasi">-</p>
+                <p class="text-2xl font-bold text-emerald-900" id="partisipasi"></p>
             </div>
         </div>
     </div>
@@ -44,18 +44,19 @@
         const ctx = document.getElementById('voteChart').getContext('2d');
 
         // Data dari backend (Laravel Blade)
-        const labels = @json($labels);       // ["Kandidat 1", "Kandidat 2"]
-        const totals = @json($totals);       // [45, 52]
-        const totalPeserta = {{ $totalPeserta }};
+        const labels = @json($labels); // ["Kandidat 1", "Kandidat 2"]
+        const totals = @json($totals); // [45, 52]
+        const totalPeserta = {{ $totalPeserta ?? 97 }};
 
         // Hitung total suara
-        const totalVotes = totals.reduce((a, b) => a + b, 0);
+        const totalVotes = Array.isArray(totals) ? totals.reduce((a, b) => a + b, 0) : 0;
         document.getElementById('totalVotes').textContent = totalVotes;
 
         // Hitung partisipasi
-        const partisipasi = totalPeserta > 0
-            ? ((totalVotes / totalPeserta) * 100).toFixed(1) + "%"
-            : "0%";
+        let partisipasi = "0%";
+        if (totalPeserta > 0) {
+            partisipasi = ((totalVotes / totalPeserta) * 100).toFixed(1) + "%";
+        }
         document.getElementById('partisipasi').textContent = partisipasi;
 
         // ChartJS
@@ -83,13 +84,20 @@
                 responsive: true,
                 maintainAspectRatio: true,
                 plugins: {
-                    legend: { display: false },
+                    legend: {
+                        display: false
+                    },
                     tooltip: {
                         backgroundColor: 'rgba(0, 0, 0, 0.8)',
                         padding: 12,
                         cornerRadius: 8,
-                        titleFont: { size: 14, weight: 'bold' },
-                        bodyFont: { size: 13 },
+                        titleFont: {
+                            size: 14,
+                            weight: 'bold'
+                        },
+                        bodyFont: {
+                            size: 13
+                        },
                         callbacks: {
                             label: function(context) {
                                 const percentage = ((context.raw / totalVotes) * 100).toFixed(1);
@@ -101,21 +109,36 @@
                 scales: {
                     y: {
                         beginAtZero: true,
-                        border: { display: false },
-                        grid: { color: 'rgba(148, 163, 184, 0.1)', drawTicks: false },
+                        border: {
+                            display: false
+                        },
+                        grid: {
+                            color: 'rgba(148, 163, 184, 0.1)',
+                            drawTicks: false
+                        },
                         ticks: {
                             stepSize: 10,
                             color: '#64748b',
-                            font: { size: 12, weight: '500' },
+                            font: {
+                                size: 12,
+                                weight: '500'
+                            },
                             padding: 8
                         }
                     },
                     x: {
-                        border: { display: false },
-                        grid: { display: false },
+                        border: {
+                            display: false
+                        },
+                        grid: {
+                            display: false
+                        },
                         ticks: {
                             color: '#1e293b',
-                            font: { size: 14, weight: '600' },
+                            font: {
+                                size: 14,
+                                weight: '600'
+                            },
                             padding: 8
                         }
                     }
@@ -124,4 +147,5 @@
         });
     </script>
 </body>
+
 </html>
