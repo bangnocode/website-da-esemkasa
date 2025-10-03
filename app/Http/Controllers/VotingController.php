@@ -16,23 +16,23 @@ class VotingController extends Controller
             ->groupBy('paslon_pradana_id')
             ->pluck('total', 'paslon_pradana_id');
 
-        // total peserta (misalnya sudah fix 97)
         $totalPeserta = 97;
 
-        // label kandidat bisa di-custom manual
         $customLabels = [
             1 => 'Mohammad Al Arthur (PA) & Astrella Ramadhani (PI)',
             2 => 'Kennie Lionel Juano (PA) & Alvy Andini Nayla F (PI)',
         ];
 
-        // ubah key id jadi nama kandidat
+        // ubah jadi array biasa
         $labels = $data->keys()->map(function ($id) use ($customLabels) {
             return $customLabels[$id] ?? 'Kandidat ' . $id;
-        });
+        })->values()->all();
+
+        $totals = $data->values()->all();
 
         return view('statistik-voting', [
-            'labels'       => array_values($labels->toArray()),
-            'totals'       => array_values($data->toArray()),
+            'labels'       => $labels,
+            'totals'       => $totals,
             'totalPeserta' => $totalPeserta
         ]);
     }
