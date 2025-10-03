@@ -10,10 +10,10 @@
 </head>
 
 <body class="bg-gradient-to-br from-slate-50 to-slate-100 min-h-screen flex items-center justify-center p-4">
-    <div class="block lg:hidden">
+    <div class="block md:hidden">
         <h1>Resolusi Device Anda Tidak Support, Silahkan Ganti Device Dengan Resolusi 1024px ke atas seperti laptop, tablet, dan lainnnya</h1>
     </div>
-    <div class="hidden lg:block max-w-4xl w-full bg-white shadow-xl rounded-3xl p-8 border border-slate-200">
+    <div class="hidden md:block max-w-4xl w-full bg-white shadow-xl rounded-3xl p-8 border border-slate-200">
         <!-- Header -->
         <div class="text-center mb-8">
             <h2 class="text-3xl font-bold text-slate-800 mb-2">Hasil Voting Pradana Periode 2025/2026</h2>
