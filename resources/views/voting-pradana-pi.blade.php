@@ -43,12 +43,12 @@
 
                         <!-- Card Container -->
                         <div
-                            class="relative bg-white rounded-2xl border-2 border-slate-200 p-6 sm:p-8 shadow-xl hover:shadow-2xl peer-checked:border-pink-500 peer-checked:ring-4 peer-checked:ring-pink-200/50 peer-checked:bg-gradient-to-br peer-checked:from-pink-50/50 peer-checked:to-rose-50/50 transition-all duration-300 hover:-translate-y-1">
+                            class="relative bg-white rounded-2xl border-2 border-slate-200 p-6 sm:p-8 shadow-xl hover:shadow-2xl peer-checked:bg-pink-100 peer-checked:border-pink-500 peer-checked:ring-4 peer-checked:ring-pink-200/50 peer-checked:bg-gradient-to-br peer-checked:from-pink-50/50 peer-checked:to-rose-50/50 transition-all duration-300 hover:-translate-y-1">
 
                             <!-- FOTO PI -->
                             <div class="flex flex-col items-center mb-6">
                                 <img src="{{ $c->foto_pi }}" alt="{{ $c->nama_kandidat }}"
-                                    class="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover shadow-md border-2 border-pink-200 group-hover:scale-105 transition-transform duration-300">
+                                    class="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover shadow-md border-2 border-pink-500 group-hover:scale-105 transition-transform duration-300">
                                 <span class="mt-3 text-base font-medium text-slate-700">{{ $c->nama_kandidat }}</span>
                                 <span class="text-xs text-slate-500">(PI)</span>
                             </div>
@@ -124,10 +124,10 @@
 
             <!-- Submit Button -->
             <div class="flex justify-center mt-10">
-                <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full max-w-xl">
                     <!-- Back Button -->
                     <button type="button" onclick="window.history.back()"
-                        class="group w-full sm:w-1/2 px-6 py-3.5 bg-white border-2 border-slate-300 text-slate-700 font-semibold rounded-xl shadow-sm hover:bg-slate-50 hover:border-slate-400 hover:shadow-md transition-all duration-300 flex items-center justify-center">
+                        class="group w-full sm:w-auto px-6 py-3.5 bg-white border-2 border-slate-300 text-slate-700 font-semibold rounded-xl shadow-sm hover:bg-slate-50 hover:border-slate-400 hover:shadow-md transition-all duration-300 flex items-center justify-center">
                         <svg class="w-5 h-5 mr-2 transform group-hover:-translate-x-1 transition-transform duration-300"
                             fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -135,8 +135,10 @@
                         </svg>
                         Kembali
                     </button>
+
+                    <!-- Submit Button -->
                     <button type="button" id="submitBtn"
-                        class="group relative px-10 py-4 bg-gradient-to-r from-pink-600 via-pink-700 to-pink-800 text-white text-lg font-semibold rounded-xl shadow-xl hover:shadow-2xl hover:from-pink-700 hover:via-pink-800 hover:to-pink-900 transform hover:scale-105 transition-all duration-300 overflow-hidden">
+                        class="group relative w-full sm:flex-1 px-10 py-4 bg-gradient-to-r from-pink-600 via-pink-700 to-pink-800 text-white text-lg font-semibold rounded-xl shadow-xl hover:shadow-2xl hover:from-pink-700 hover:via-pink-800 hover:to-pink-900 transform hover:scale-105 transition-all duration-300 overflow-hidden">
                         <span class="relative z-10 flex items-center justify-center">
                             Lanjutkan
                             <svg class="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300"

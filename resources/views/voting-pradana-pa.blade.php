@@ -49,12 +49,12 @@
 
                         <!-- Card -->
                         <div
-                            class="relative bg-white rounded-2xl border-2 border-slate-200 p-6 shadow-xl hover:shadow-2xl peer-checked:border-sky-500 peer-checked:ring-4 peer-checked:ring-sky-200/50 transition-all duration-300">
+                            class="relative bg-white rounded-2xl border-2 border-slate-200 p-6 shadow-xl hover:shadow-2xl peer-checked:bg-blue-100 peer-checked:border-sky-500 peer-checked:ring-4 peer-checked:ring-sky-200/50 transition-all duration-300">
 
                             <!-- Foto -->
                             <div class="flex flex-col items-center mb-6">
                                 <img src="{{ $c->foto_pa ?? asset('img/default.png') }}" alt="{{ $c->nama_kandidat }}"
-                                    class="w-28 h-28 rounded-full object-cover shadow-md border-2 border-sky-200 group-hover:scale-105 transition-transform duration-300">
+                                    class="w-28 h-28 rounded-full object-cover shadow-md border-2 border-sky-500 group-hover:scale-105 transition-transform duration-300">
                                 <span class="mt-3 text-lg font-semibold text-slate-700">{{ $c->nama_kandidat }}</span>
                                 <span class="text-sm text-slate-500">(PA)</span>
                             </div>
@@ -128,8 +128,14 @@
             <!-- Submit Button -->
             <div class="flex justify-center mt-10">
                 <button type="button" id="submitBtn"
-                    class="group relative px-10 py-4 bg-gradient-to-r from-sky-600 via-sky-700 to-sky-800 text-white text-lg font-semibold rounded-xl shadow-xl hover:shadow-2xl hover:from-sky-700 hover:via-sky-800 hover:to-sky-900 transform hover:scale-105 transition-all duration-300">
-                    Pilih & Lanjutkan
+                    class="group relative w-full sm:w-auto px-10 py-4 bg-gradient-to-r from-sky-600 via-sky-700 to-sky-800 text-white text-lg font-semibold rounded-xl shadow-xl hover:shadow-2xl hover:from-sky-700 hover:via-sky-800 hover:to-sky-900 transform hover:scale-105 transition-all duration-300">
+                    <span class="flex items-center justify-center">
+                        Pilih & Lanjutkan
+                        <svg class="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300"
+                            fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                    </span>
                 </button>
             </div>
         </form>

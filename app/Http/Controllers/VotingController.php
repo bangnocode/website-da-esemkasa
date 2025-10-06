@@ -70,6 +70,10 @@ class VotingController extends Controller
         ]);
     }
 
+    public function showTutorial(){
+        return view('tutorial');
+    }
+
     public function showSession()
     {
         dd(Session::all());

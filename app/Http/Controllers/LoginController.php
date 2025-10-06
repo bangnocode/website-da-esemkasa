@@ -36,7 +36,7 @@ class LoginController extends Controller
         // Jika aman, simpan ke session
         $request->session()->put('token_peserta', $peserta->token_peserta);
 
-        return redirect()->route('voting.pradana.pa');
+        return redirect()->route('tutorial.voting');
     }
 
 

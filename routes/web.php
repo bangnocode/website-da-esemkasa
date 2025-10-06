@@ -21,6 +21,8 @@ Route::get('/get-statistik-data-hasil-voting-pradana', [VotingController::class,
 
 Route::middleware('checkPeserta')->group(function () {
 
+    Route::get('/voting/pradana/tutorial', fn() => view('tutorial'))->name('tutorial.voting');
+
     // Pilih calon pradana cowo (PA)
     Route::get('/voting/pradana/pa', [VotingController::class, 'showPradanaPa'])
         ->name('voting.pradana.pa');
