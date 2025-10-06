@@ -11,20 +11,15 @@ class HasilVote extends Model
 
     protected $table = 'hasil_vote';
 
-    protected $fillable = [
-        'paslon_pradana_id',
-        'token_peserta'
-    ];
+    protected $fillable = ['nama_kandidat_pa_id', 'nama_kandidat_pi_id', 'token_peserta'];
 
-    // Relasi ke peserta
-    // public function peserta()
-    // {
-    //     return $this->belongsTo(Peserta::class, 'peserta_id');
-    // }
-
-    // Relasi ke paslon pradana
-    public function paslonPradana()
+    public function kandidatPa()
     {
-        return $this->belongsTo(PaslonPradana::class, 'paslon_pradana_id');
+        return $this->belongsTo(CalonPradana::class, 'nama_kandidat_pa_id');
+    }
+
+    public function kandidatPi()
+    {
+        return $this->belongsTo(CalonPradana::class, 'nama_kandidat_pi_id');
     }
 }

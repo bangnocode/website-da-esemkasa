@@ -11,14 +11,10 @@ class MisiPaslon extends Model
 
     protected $table = 'misi_paslon';
 
-    protected $fillable = [
-        'paslon_pradana_id',
-        'misi',
-    ];
+    protected $fillable = ['calon_pradana_id', 'misi'];
 
-    // Relasi ke PaslonPradana
-    public function paslonPradana()
+    public function calonPradana()
     {
-        return $this->belongsTo(PaslonPradana::class, 'paslon_pradana_id');
+        return $this->belongsTo(CalonPradana::class);
     }
 }

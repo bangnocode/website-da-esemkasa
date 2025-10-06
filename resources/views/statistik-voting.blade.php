@@ -11,31 +11,50 @@
 
 <body class="bg-gradient-to-br from-slate-50 to-slate-100 min-h-screen flex items-center justify-center p-4">
     <div class="block md:hidden">
-        <h1>Resolusi Device Anda Tidak Support, Silahkan Ganti Device Dengan Resolusi 1024px ke atas seperti laptop, tablet, dan lainnnya</h1>
+        <h1 class="text-center text-red-600 font-semibold">
+            Resolusi device Anda tidak support.<br>
+            Gunakan perangkat dengan resolusi 1024px ke atas (laptop/tablet).
+        </h1>
     </div>
-    <div class="hidden md:block max-w-4xl w-full bg-white shadow-xl rounded-3xl p-8 border border-slate-200">
+
+    <div class="hidden md:block max-w-5xl w-full bg-white shadow-xl rounded-3xl p-8 border border-slate-200">
         <!-- Header -->
         <div class="text-center mb-8">
             <h2 class="text-3xl font-bold text-slate-800 mb-2">Hasil Voting Calon Pradana Periode 2025/2026</h2>
-            <h2 class="text-xl font-bold text-slate-800 mb-2">Dewan Ambalan SMK Negeri 1 Banyuwangi</h2>
+            <p class="text-lg text-slate-600">Dewan Ambalan SMK Negeri 1 Banyuwangi</p>
         </div>
 
-        <!-- Chart Container -->
-        <div class="bg-gradient-to-br from-slate-50 to-white rounded-2xl p-6 border border-slate-100">
+        <!-- Ringkasan -->
+        <div class="grid grid-cols-2 gap-6 mb-10">
+            <div
+                class="bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-xl p-5 border border-blue-200/50 text-center">
+                <p class="text-sm font-semibold text-blue-600 uppercase tracking-wide">Total Suara Masuk</p>
+                <p class="text-3xl font-bold text-blue-900 mt-1" id="totalVotes">0</p>
+            </div>
+            <div
+                class="bg-gradient-to-br from-emerald-50 to-emerald-100/50 rounded-xl p-5 border border-emerald-200/50 text-center">
+                <p class="text-sm font-semibold text-emerald-600 uppercase tracking-wide">Partisipasi</p>
+                <p class="text-3xl font-bold text-emerald-900 mt-1" id="partisipasi">0%</p>
+                <p class="text-xs text-slate-500 mt-1">Dari {{ $totalPeserta }} peserta</p>
+            </div>
+        </div>
+
+        <!-- Chart -->
+        <div class="bg-gradient-to-br from-slate-50 to-white rounded-2xl p-6 border border-slate-100 shadow-sm">
             <canvas id="voteChart" style="max-height: 400px;"></canvas>
         </div>
 
-        <!-- Stats Summary -->
-        <div class="grid grid-cols-2 gap-4 mt-6">
-            <div class="bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-xl p-4 border border-blue-200/50">
-                <p class="text-xs font-semibold text-blue-600 uppercase tracking-wide mb-1">Total Suara</p>
-                <p class="text-2xl font-bold text-blue-900" id="totalVotes">0</p>
-            </div>
-            <div
-                class="bg-gradient-to-br from-emerald-50 to-emerald-100/50 rounded-xl p-4 border border-emerald-200/50">
-                <p class="text-xs font-semibold text-emerald-600 uppercase tracking-wide mb-1">Partisipasi</p>
-                <p class="text-2xl font-bold text-emerald-900" id="partisipasi">0%</p>
-            </div>
+        <!-- Hasil Detail -->
+        <div class="mt-10 grid md:grid-cols-2 gap-6">
+            @foreach ($labels as $i => $label)
+                <div class="flex flex-col justify-between bg-slate-50 rounded-xl px-5 py-4 border shadow-sm">
+                    <span class="font-semibold text-slate-800 text-lg">{{ $label }}</span>
+                    <span class="text-slate-700 font-medium mt-2 text-sm">
+                        <span class="text-blue-600">{{ $totals[$i] }} suara</span>
+                        — <span class="text-emerald-600">{{ $percentages[$i] }}%</span>
+                    </span>
+                </div>
+            @endforeach
         </div>
     </div>
 
@@ -43,31 +62,30 @@
         const labels = @json($labels);
         const totals = @json($totals);
         const totalPeserta = {{ $totalPeserta }};
+        const totalVotes = {{ $totalVotes }};
 
-        console.log("Labels:", labels);
-        console.log("Totals:", totals);
-        console.log("Peserta:", totalPeserta);
-
-        const totalVotes = totals.reduce((a, b) => a + b, 0);
+        // Update Ringkasan
         document.getElementById('totalVotes').textContent = totalVotes;
-
-        const partisipasi = totalPeserta > 0 ?
-            ((totalVotes / totalPeserta) * 100).toFixed(1) + "%" :
-            "0%";
+        const partisipasi = totalPeserta > 0 ? ((totalVotes / totalPeserta) * 100).toFixed(1) + "%" : "0%";
         document.getElementById('partisipasi').textContent = partisipasi;
 
+        // Chart
         new Chart(document.getElementById('voteChart'), {
             type: 'bar',
             data: {
                 labels: labels,
                 datasets: [{
-                    label: 'Jumlah Vote',
+                    label: 'Jumlah Suara',
                     data: totals,
-                    backgroundColor: ['rgba(59,130,246,0.8)', 'rgba(239,68,68,0.8)'],
-                    borderColor: ['rgb(59,130,246)', 'rgb(239,68,68)'],
+                    backgroundColor: [
+                        'rgba(59,130,246,0.8)', // PA 1
+                        'rgba(59,130,246,0.6)', // PA 2
+                        'rgba(239,68,68,0.8)', // PI 1
+                        'rgba(239,68,68,0.6)', // PI 2
+                    ],
                     borderWidth: 2,
-                    borderRadius: 12,
-                    barThickness: 80
+                    borderRadius: 10,
+                    barThickness: 65
                 }]
             },
             options: {
@@ -86,7 +104,10 @@
                 },
                 scales: {
                     y: {
-                        beginAtZero: true
+                        beginAtZero: true,
+                        ticks: {
+                            precision: 0
+                        }
                     }
                 }
             }

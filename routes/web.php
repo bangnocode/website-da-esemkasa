@@ -12,18 +12,32 @@ Route::get('/galeri', fn() => view('multi_page.da-esemkasa.galeri'));
 Route::get('/berita/open-recruitmen-da-2025', fn() => view('multi_page.da-esemkasa.berita.open_recruitment_da_2025'));
 Route::get('/berita/PTA2025', fn() => view('multi_page.da-esemkasa.berita.PTA2025'));
 
-// Route::get('/login-voting', [LoginController::class, 'showLogin'])->name('login.show');
-// Route::post('/login', [LoginController::class, 'login'])->name('login.process')->middleware('throttle:5,1');
-// Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
-// Route::get('/show-session', [VotingController::class, 'showSession'])->name('session.show');
+Route::get('/login-voting', [LoginController::class, 'showLogin'])->name('login.show');
+Route::post('/login', [LoginController::class, 'login'])->name('login.process')->middleware('throttle:5,1');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('/show-session', [VotingController::class, 'showSession'])->name('session.show');
 
-// Route::get('/get-statistik-data-hasil-voting-pradana', [VotingController::class, 'statistik'])->name('statistik.show');
+Route::get('/get-statistik-data-hasil-voting-pradana', [VotingController::class, 'statistik'])->name('statistik.show');
 
-// Route::middleware('checkPeserta')->group(function () {
+Route::middleware('checkPeserta')->group(function () {
 
-//     Route::get('/voting/pradana', [VotingController::class, 'showPradana'])->name('voting.pradana');
-//     Route::post('/voting/pradana', [VotingController::class, 'votePradana']);
+    // Pilih calon pradana cowo (PA)
+    Route::get('/voting/pradana/pa', [VotingController::class, 'showPradanaPa'])
+        ->name('voting.pradana.pa');
+    Route::post('/voting/pradana/pa', [VotingController::class, 'votePradanaPa'])
+        ->name('voting.pradana.pa.vote');
 
-//     Route::get('/voting/confirm', [VotingController::class, 'confirm'])->name('voting.confirm');
-//     Route::post('/voting/confirm', [VotingController::class, 'storeVote'])->name('voting.store');
-// });
+    // Pilih calon pradana cewe (PI)
+    Route::get('/voting/pradana/pi', [VotingController::class, 'showPradanaPi'])
+        ->name('voting.pradana.pi');
+    Route::post('/voting/pradana/pi', [VotingController::class, 'votePradanaPi'])
+        ->name('voting.pradana.pi.vote');
+
+    // Konfirmasi pilihan
+    Route::get('/voting/confirm', [VotingController::class, 'confirm'])
+        ->name('voting.confirm');
+
+    // Simpan hasil voting
+    Route::post('/voting/store', [VotingController::class, 'storeVote'])
+        ->name('voting.store');
+});

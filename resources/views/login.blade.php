@@ -96,7 +96,7 @@
             @csrf
             <div>
                 <label for="token" class="block text-slate-700 font-medium mb-2">Masukkan Token</label>
-                <input type="text" name="token_peserta" id="token" maxlength="6" required
+                <input type="text" name="token_peserta" id="token" maxlength="9" required
                     class="w-full border border-slate-300 px-4 py-3 rounded-lg focus:ring-2 focus:ring-sky-400 focus:outline-none uppercase">
             </div>
 

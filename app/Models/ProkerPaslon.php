@@ -11,16 +11,11 @@ class ProkerPaslon extends Model
 
     protected $table = 'program_kerja_paslon';
 
-    protected $fillable = [
-        'paslon_pradana_id',
-        'nama_proker',
-        'deskripsi_proker',
-        'manfaat_proker',
-    ];
+    protected $fillable = ['calon_pradana_id', 'nama_proker', 'deskripsi_proker', 'manfaat_proker'];
 
     // Relasi ke PaslonPradana
     public function paslonPradana()
     {
-        return $this->belongsTo(PaslonPradana::class, 'paslon_pradana_id');
+        return $this->belongsTo(CalonPradana::class);
     }
 }

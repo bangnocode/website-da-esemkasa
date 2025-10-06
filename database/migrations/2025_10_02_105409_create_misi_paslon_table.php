@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('misi_paslon', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('paslon_pradana_id')->constrained('paslon_pradana')->cascadeOnDelete();
+            $table->foreignId('calon_pradana_id')->constrained('calon_pradana')->cascadeOnDelete();
             $table->text('misi')->nullable();
             $table->timestamps();
         });

@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('hasil_vote', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('paslon_pradana_id')->nullable()->constrained('paslon_pradana')->nullOnDelete();
-            $table->text('token_peserta');
-            $table->timestamps();
-        });
+            Schema::create('hasil_vote', function (Blueprint $table) {
+                $table->id();
+                $table->foreignId('nama_kandidat_pa_id')->constrained('calon_pradana');
+                $table->foreignId('nama_kandidat_pi_id')->constrained('calon_pradana');
+                $table->text('token_peserta');
+                $table->timestamps();
+            });
     }
 
     /**

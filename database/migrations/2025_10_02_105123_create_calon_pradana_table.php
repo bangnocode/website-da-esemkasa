@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('paslon_pradana', function (Blueprint $table) {
+        Schema::create('calon_pradana', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_pradana_pa');
-            $table->string('nama_pradana_pi');
+            $table->string('nama_kandidat');
+            $table->enum('jabatan', ['pa', 'pi']); // pa = putra, pi = putri
             $table->text('visi')->nullable();
             $table->timestamps();
         });
