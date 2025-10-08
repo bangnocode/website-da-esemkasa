@@ -140,7 +140,7 @@
                     <button type="button" id="submitBtn"
                         class="group relative w-full sm:flex-1 px-10 py-4 bg-gradient-to-r from-pink-600 via-pink-700 to-pink-800 text-white text-lg font-semibold rounded-xl shadow-xl hover:shadow-2xl hover:from-pink-700 hover:via-pink-800 hover:to-pink-900 transform hover:scale-105 transition-all duration-300 overflow-hidden">
                         <span class="relative z-10 flex items-center justify-center">
-                            Lanjutkan
+                            Pilih & Lanjutkan
                             <svg class="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300"
                                 fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
