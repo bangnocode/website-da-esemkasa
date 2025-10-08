@@ -25,7 +25,7 @@
                             class="w-16 h-16 object-contain drop-shadow-lg">
                     </div>
                     <h1 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Tutorial Voting Pradana</h1>
-                    <p class="text-gray-600 text-sm md:text-base">Ikuti 5 langkah mudah untuk memilih Pradana</p>
+                    <p class="text-gray-600 text-sm md:text-base">Ikuti 6 langkah mudah untuk memilih Pradana</p>
                 </div>
             </div>
 
