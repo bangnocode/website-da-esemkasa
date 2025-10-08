@@ -86,6 +86,22 @@
                         <div
                             class="w-8 h-8 bg-white text-blue-600 rounded-full flex items-center justify-center font-bold mr-3">
                             4</div>
+                        <h3 class="text-white font-semibold text-base md:text-lg">Klik "Pilih & Lanjutkan"</h3>
+                    </div>
+                    <div class="p-4">
+                        <p class="text-gray-700 text-sm md:text-base leading-relaxed">
+                            Scroll ke bawah dan klik tombol <strong>"Pilih & Lanjutkan"</strong> untuk lanjut ke tahap
+                            berikutnya.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="bg-blue-600 px-4 py-3 flex items-center">
+                        <div
+                            class="w-8 h-8 bg-white text-blue-600 rounded-full flex items-center justify-center font-bold mr-3">
+                            5</div>
                         <h3 class="text-white font-semibold text-base md:text-lg">Konfirmasi Pilihan</h3>
                     </div>
                     <div class="p-4">
@@ -105,12 +121,12 @@
                     </div>
                 </div>
 
-                <!-- Step 5 -->
+                <!-- Step 6 -->
                 <div class="bg-white rounded-xl shadow-md overflow-hidden">
                     <div class="bg-green-600 px-4 py-3 flex items-center">
                         <div
                             class="w-8 h-8 bg-white text-green-600 rounded-full flex items-center justify-center font-bold mr-3">
-                            5</div>
+                            6</div>
                         <h3 class="text-white font-semibold text-base md:text-lg">Kirim Voting</h3>
                     </div>
                     <div class="p-4">
