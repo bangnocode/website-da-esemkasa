@@ -17,14 +17,14 @@
             </a>
 
             <!-- Mobile Menu Button -->
-<button id="navbar-toggle" type="button"
-    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-sky-800 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition">
-    <span class="sr-only">Open main menu</span>
-    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M1 1h15M1 7h15M1 13h15" />
-    </svg>
-</button>
+            <button id="navbar-toggle" type="button"
+                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-sky-800 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M1 1h15M1 7h15M1 13h15" />
+                </svg>
+            </button>
 
 
             <!-- Menu Links -->
@@ -78,19 +78,23 @@
                 <h2 class="text-2xl font-bold mb-3">PTA <br> (Penerimaan Tamu Ambalan)</h2>
                 <p class="mb-4 text-gray-700">PTA adalah kegiatan pramuka untuk menyambut siswa baru dan mengenalkan
                     mereka pada kepramukaan penegak...</p>
-                <img src="{{ asset('img/da-esemkasa/galeri/bg-banner_11zon.webp') }}" loading="lazy" alt="" class="w-full rounded-lg shadow">
+                <img src="{{ asset('img/da-esemkasa/galeri/bg-banner_11zon.webp') }}" loading="lazy" alt=""
+                    class="w-full rounded-lg shadow">
             </div>
             <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl hover:-translate-y-1 transition">
                 <h2 class="text-2xl font-bold mb-3">Jumat Rutin</h2>
                 <p class="mb-4 text-gray-700">Kegiatan Pramuka yang dilaksanakan setiap hari Jumat, membina
                     kedisiplinan, kerja sama, dan keterampilan...</p>
-                <img src="{{ asset('img/da-esemkasa/galeri/IMG_1659_6_11zon.webp') }}" loading="lazy" alt="" class="w-full rounded-lg shadow">
+                <img src="{{ asset('img/da-esemkasa/galeri/IMG_1659_6_11zon.webp') }}" loading="lazy" alt=""
+                    class="w-full rounded-lg shadow">
             </div>
             <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl hover:-translate-y-1 transition">
                 <h2 class="text-2xl font-bold mb-3">Kunjungan SD</h2>
-                <p class="mb-4 text-gray-700">Program kerja Dewan Ambalan SMKN 1 Banyuwangi untuk mengajar kepramukaan di SD melalui kegiatan
+                <p class="mb-4 text-gray-700">Program kerja Dewan Ambalan SMKN 1 Banyuwangi untuk mengajar kepramukaan
+                    di SD melalui kegiatan
                     interaktif seperti tali-menali dan permainan edukatif...</p>
-                <img src="{{ asset('img/da-esemkasa/galeri/1bc3c56e-d437-4d18-abed-ef061397e509_4_11zon.webp') }}" loading="lazy" alt="" class="w-full rounded-lg shadow">
+                <img src="{{ asset('img/da-esemkasa/galeri/1bc3c56e-d437-4d18-abed-ef061397e509_4_11zon.webp') }}"
+                    loading="lazy" alt="" class="w-full rounded-lg shadow">
             </div>
         </div>
         <div class="text-end mt-6">
@@ -107,7 +111,8 @@
                 class="w-full rounded-xl border-yellow-500 border-2 shadow hover:scale-105 transition">
             <img src="{{ asset('img/da-esemkasa/galeri/IMG_1775_10_11zon.webp') }}" loading="lazy" alt=""
                 class="w-full rounded-xl border-yellow-500 border-2 shadow hover:scale-105 transition">
-            <img src="{{ asset('img/da-esemkasa/galeri/1bc3c56e-d437-4d18-abed-ef061397e509_4_11zon.webp') }}" loading="lazy" alt=""
+            <img src="{{ asset('img/da-esemkasa/galeri/1bc3c56e-d437-4d18-abed-ef061397e509_4_11zon.webp') }}"
+                loading="lazy" alt=""
                 class="w-full rounded-xl border-yellow-500 border-2 shadow hover:scale-105 transition">
         </div>
         <div class="text-end mt-6">
@@ -121,31 +126,13 @@
         <p class="text-center text-gray-600 mb-12 text-lg">Berita Tentang Informasi Terbaru Dari Organisasi Dewan
             Ambalan</p>
         <div class="grid gap-8 md:grid-cols-3">
-            <a href="{{ url('/berita/open-recruitmen-da-2025') }}"
+            <a href="{{ route('berita.kunjungan.piggi') }}"
                 class="bg-white p-6 rounded-xl shadow hover:shadow-xl hover:-translate-y-1 transition block">
-                <img src="{{ asset('img/da-esemkasa/galeri/IMG_1659_6_11zon.webp') }}" loading="lazy" alt="" class="w-full rounded-lg shadow">
-                <h2 class="text-lg font-semibold mt-6">Open Recruitment Anggota Dewan Ambalan</h2>
-                <p class="text-sm text-gray-700 mt-4">Proses seleksi terbuka bagi Pramuka Penegak di SMKN 1
-                    Banyuwangi...</p>
-                <span class="block text-sm text-gray-500 mt-4">Rabu, 25 Juli 2025</span>
-            </a>
-            <a href="{{ url('/berita/PTA2025') }}"
-                class="bg-white p-6 rounded-xl shadow hover:shadow-xl hover:-translate-y-1 transition block">
-                <img src="{{ asset('img/da-esemkasa/galeri/bg-banner_11zon.webp') }}" loading="lazy" alt="" class="w-full rounded-lg shadow">
-                <h2 class="text-lg font-semibold mt-6">Penerimaan Tamu Ambalan & Diesnatalis SMK Negeri 1 Banyuwangi
-                </h2>
-                <p class="text-sm text-gray-700 mt-4">Kegiatan gabungan antara Penerimaan Tamu Ambalan dan perayaan hari
-                    jadi sekolah...</p>
-                <span class="block text-sm text-gray-500 mt-4">Rabu, 25 Juli 2025</span>
-            </a>
-            <a href="{{ url('/berita/PTA2025') }}"
-                class="bg-white p-6 rounded-xl shadow hover:shadow-xl hover:-translate-y-1 transition block">
-                <img src="{{ asset('img/da-esemkasa/galeri/bg-banner_11zon.webp') }}" loading="lazy" alt="" class="w-full rounded-lg shadow">
-                <h2 class="text-lg font-semibold mt-6">Penerimaan Tamu Ambalan & Diesnatalis SMK Negeri 1 Banyuwangi
-                </h2>
-                <p class="text-sm text-gray-700 mt-4">Kegiatan gabungan antara Penerimaan Tamu Ambalan dan perayaan hari
-                    jadi sekolah...</p>
-                <span class="block text-sm text-gray-500 mt-4">Rabu, 25 Juli 2025</span>
+                <img src="{{ asset('img/da-esemkasa/galeri/da-piggi-2.webp') }}" loading="lazy" alt=""
+                    class="w-full rounded-lg shadow">
+                <h2 class="text-lg font-semibold mt-6">Kunjungan Edukatif Dewan Ambalan SMKN 1 Banyuwangi ke PIGGI Banyuwangi</h2>
+                <p class="text-sm text-gray-700 mt-4">Kegiatan ini menjadi bagian dari agenda pembelajaran luar sekolah yang bertujuan...</p>
+                <span class="block text-sm text-gray-500 mt-4">Jum'at, 10 Oktober 2025</span>
             </a>
         </div>
         <div class="text-end mt-6">

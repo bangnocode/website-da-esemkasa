@@ -65,37 +65,17 @@
     <main class="py-12 px-6">
         <section class="section-news grid gap-8 sm:grid-cols-2 lg:grid-cols-3 md:max-w-7xl mx-auto">
 
-            <a href="{{ url('/berita/PTA2025') }}" class="block">
+            <a href="{{route('berita.kunjungan.piggi')}}" class="block">
                 <article
                     class="bg-white border rounded-lg shadow-md overflow-hidden hover:shadow-xl hover:scale-[1.02] transition-all duration-300">
-                    <img src="{{ asset('img/da-esemkasa/galeri/bg-banner_11zon.webp') }}" alt="PTA"
+                    <img src="{{ asset('img/da-esemkasa/galeri/da-piggi-2.webp') }}" alt="PTA"
                         class="w-full h-48 object-cover">
                     <div class="p-6 space-y-3">
                         <h2 class="font-bold text-lg text-sky-900">
-                            Penerimaan Tamu Ambalan & Diesnatalis SMK Negeri 1 Banyuwangi
+                            Kunjungan Edukatif Dewan Ambalan SMKN 1 Banyuwangi ke PIGGI Banyuwangi
                         </h2>
                         <p class="text-gray-700 text-sm leading-relaxed">
-                            Merupakan kegiatan gabungan antara Penerimaan Tamu Ambalan dan perayaan hari jadi sekolah
-                            yang dilaksanakan pada 18 Juli 2025. Kegiatan ini bertujuan ...
-                        </p>
-                        <span class="block text-sm text-gray-500">Rabu, 25 Juli 2025</span>
-                    </div>
-                </article>
-            </a>
-
-            <!-- Card lainnya -->
-            <a href="{{ url('/berita/open-recruitmen-da-2025') }}" class="block">
-                <article
-                    class="bg-white border rounded-lg shadow-md overflow-hidden hover:shadow-xl hover:scale-[1.02] transition-all duration-300">
-                    <img src="{{ asset('img/da-esemkasa/galeri/IMG_1659_6_11zon.webp') }}" alt="Open Recruitment"
-                        class="w-full h-48 object-cover">
-                    <div class="p-6 space-y-3">
-                        <h2 class="font-bold text-lg text-sky-900">
-                            Open Recruitment Anggota Dewan Ambalan
-                        </h2>
-                        <p class="text-gray-700 text-sm leading-relaxed">
-                            Adalah proses seleksi terbuka bagi Pramuka Penegak di SMKN 1 Banyuwangi yang ingin bergabung
-                            dalam kepengurusan Ambalan. Kegiatan ini bertujuan ...
+                            Kegiatan ini menjadi bagian dari agenda pembelajaran luar sekolah yang bertujuan...
                         </p>
                         <span class="block text-sm text-gray-500">Rabu, 25 Juli 2025</span>
                     </div>

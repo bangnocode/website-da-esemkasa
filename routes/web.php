@@ -11,6 +11,7 @@ Route::get('/berita', fn() => view('multi_page.da-esemkasa.berita'));
 Route::get('/galeri', fn() => view('multi_page.da-esemkasa.galeri'));
 Route::get('/berita/open-recruitmen-da-2025', fn() => view('multi_page.da-esemkasa.berita.open_recruitment_da_2025'));
 Route::get('/berita/PTA2025', fn() => view('multi_page.da-esemkasa.berita.PTA2025'));
+Route::get('/berita/kunjungan-ke-piggi-banyuwangi', fn() => view('multi_page.da-esemkasa.berita.kunjungan-piggi'))->name('berita.kunjungan.piggi');
 
 Route::get('/login-voting', [LoginController::class, 'showLogin'])->name('login.show');
 Route::post('/login', [LoginController::class, 'login'])->name('login.process')->middleware('throttle:5,1');

@@ -134,7 +134,7 @@
         <!-- Card -->
         <div
             class="bg-white border rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
-            <img src="{{ asset('img/da-esemkasa/galeri/bg-banner_11zon.webp') }}" alt="Muspanegak" class="w-full h-48 object-cover">
+            <img src="{{ asset('img/da-esemkasa/galeri/muspa.webp') }}" alt="Muspanegak" class="w-full h-48 object-cover">
             <div class="p-6 flex flex-col gap-3">
                 <h2 class="font-bold text-xl text-sky-900">Muspanegak</h2>
                 <p class="text-gray-700 text-sm leading-relaxed">
