@@ -91,13 +91,13 @@
             </p>
         </div>
 
-        {{-- <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
             class="bi bi-lock-fill w-20 text-sky-800 mx-auto" viewBox="0 0 16 16">
             <path fill-rule="evenodd"
                 d="M8 0a4 4 0 0 1 4 4v2.05a2.5 2.5 0 0 1 2 2.45v5a2.5 2.5 0 0 1-2.5 2.5h-7A2.5 2.5 0 0 1 2 13.5v-5a2.5 2.5 0 0 1 2-2.45V4a4 4 0 0 1 4-4m0 1a3 3 0 0 0-3 3v2h6V4a3 3 0 0 0-3-3" />
-        </svg> --}}
+        </svg>
 
-        <!-- Form -->
+        {{-- <!-- Form -->
         <form method="POST" action="{{ route('login.process') }}" class="space-y-5">
             @csrf
             <div>
@@ -110,7 +110,7 @@
                 class="w-full text-center bg-gradient-to-r from-sky-600 to-sky-700 hover:from-sky-700 hover:to-sky-800 text-white font-semibold py-3 rounded-xl shadow-md transition transform hover:-translate-y-0.5">
                 Masuk
             </button>
-        </form>
+        </form> --}}
 
         <!-- Error -->
         @if (session('error'))
