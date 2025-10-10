@@ -5,7 +5,7 @@
     <!-- Meta dasar -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kunjungan Edukatif Dewan Ambalan SMKN 1 Banyuwangi ke PIGGI Banyuwangi</title>
+    <title>DA ESEMKASA - Dewan Ambalan SMKN 1 Banyuwangi</title>
     <meta name="description"
         content="Dewan Ambalan SMK Negeri 1 Banyuwangi melakukan kunjungan edukatif ke PIGGI Banyuwangi untuk menambah wawasan tentang geologi dan potensi alam Banyuwangi.">
     <meta name="keywords"
