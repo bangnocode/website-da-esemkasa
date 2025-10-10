@@ -121,7 +121,7 @@
         <!-- Card -->
         <div
             class="bg-white border rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
-            <img src="{{ asset('img/da-esemkasa/galeri/_SON0751_2_11zon.webp') }}" alt="Laksana" class="w-full h-48 object-cover">
+            <img src="{{ asset('img/da-esemkasa/galeri/laksana.webp') }}" alt="Laksana" class="w-full h-48 object-cover">
             <div class="p-6 flex flex-col gap-3">
                 <h2 class="font-bold text-xl text-sky-900">Laksana</h2>
                 <p class="text-gray-700 text-sm leading-relaxed">
