@@ -10,38 +10,46 @@
 </head>
 
 <body class="bg-gradient-to-br from-slate-50 to-slate-100 min-h-screen flex items-center justify-center p-4">
+    <div class="block md:hidden">
+        <h1 class="text-center text-red-600 font-semibold">
+            Jika Anda Menggunakan HP, Gunakan Mode Desktop<br>
+            Atau Gunakan perangkat dengan resolusi 1024px ke atas (laptop/tablet/komputer).
+        </h1>
+    </div>
 
-    <div class="max-w-5xl w-full bg-white shadow-xl rounded-3xl p-4 sm:p-6 md:p-8 border border-slate-200">
-        <div class="text-center mb-6 md:mb-8">
-            <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-slate-800 mb-2">
-                Hasil Voting Calon Pradana Periode 2025/2026
-            </h2>
-            <p class="text-sm sm:text-base text-slate-600">Dewan Ambalan SMK Negeri 1 Banyuwangi</p>
+    <div class="hidden md:block max-w-5xl w-full bg-white shadow-xl rounded-3xl p-8 border border-slate-200">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h2 class="text-3xl font-bold text-slate-800 mb-2">Hasil Voting Calon Pradana Periode 2025/2026</h2>
+            <p class="text-lg text-slate-600">Dewan Ambalan SMK Negeri 1 Banyuwangi</p>
         </div>
 
-        <div class="grid grid-cols-2 gap-4 sm:gap-6 mb-8 md:mb-10">
+        <!-- Ringkasan -->
+        <div class="grid grid-cols-2 gap-6 mb-10">
             <div
-                class="bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-xl p-3 sm:p-5 border border-blue-200/50 text-center">
-                <p class="text-xs sm:text-sm font-semibold text-blue-600 uppercase tracking-wide">Total Suara Masuk</p>
-                <p class="text-2xl sm:text-3xl font-bold text-blue-900 mt-1" id="totalVotes">0</p>
+                class="bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-xl p-5 border border-blue-200/50 text-center">
+                <p class="text-sm font-semibold text-blue-600 uppercase tracking-wide">Total Suara Masuk</p>
+                <p class="text-3xl font-bold text-blue-900 mt-1" id="totalVotes">0</p>
             </div>
             <div
-                class="bg-gradient-to-br from-emerald-50 to-emerald-100/50 rounded-xl p-3 sm:p-5 border border-emerald-200/50 text-center">
-                <p class="text-xs sm:text-sm font-semibold text-emerald-600 uppercase tracking-wide">Partisipasi</p>
-                <p class="text-2xl sm:text-3xl font-bold text-emerald-900 mt-1" id="partisipasi">0%</p>
+                class="bg-gradient-to-br from-emerald-50 to-emerald-100/50 rounded-xl p-5 border border-emerald-200/50 text-center">
+                <p class="text-sm font-semibold text-emerald-600 uppercase tracking-wide">Partisipasi</p>
+                <p class="text-3xl font-bold text-emerald-900 mt-1" id="partisipasi">0%</p>
                 <p class="text-xs text-slate-500 mt-1">Dari {{ $totalPeserta }} peserta</p>
             </div>
         </div>
 
-        <div class="bg-gradient-to-br from-slate-50 to-white rounded-2xl p-4 sm:p-6 border border-slate-100 shadow-sm">
+        <!-- Chart -->
+        <div class="bg-gradient-to-br from-slate-50 to-white rounded-2xl p-6 border border-slate-100 shadow-sm">
             <canvas id="voteChart" style="max-height: 400px;"></canvas>
         </div>
 
-        <div class="mt-8 md:mt-10 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+        <!-- Hasil Detail -->
+        <div class="mt-10 grid md:grid-cols-2 gap-6">
             @foreach ($labels as $i => $label)
-                <div class="flex flex-col justify-between bg-slate-50 rounded-xl px-4 py-3 sm:px-5 sm:py-4 border shadow-sm">
-                    <span class="font-semibold text-slate-800 text-base md:text-lg">{{ $label }}</span>
-                    <span class="text-slate-700 font-medium mt-1 md:mt-2 text-sm">
+                <div class="flex flex-col justify-between bg-slate-50 rounded-xl px-5 py-4 border shadow-sm">
+                    <span class="font-semibold text-slate-800 text-lg">{{ $label }}</span>
+                    <span class="text-slate-700 font-medium mt-2 text-sm">
                         <span class="text-blue-600">{{ $totals[$i] }} suara</span>
                         — <span class="text-emerald-600">{{ $percentages[$i] }}%</span>
                     </span>
@@ -77,12 +85,10 @@
                     ],
                     borderWidth: 2,
                     borderRadius: 10,
-                    barThickness: 45 // Sedikit dikurangi agar lebih baik di mobile
+                    barThickness: 65
                 }]
             },
             options: {
-                responsive: true, // Pastikan Chart.js responsif
-                maintainAspectRatio: false, // Penting untuk mengontrol tinggi
                 plugins: {
                     legend: {
                         display: false
@@ -90,7 +96,7 @@
                     tooltip: {
                         callbacks: {
                             label: function(ctx) {
-                                const percent = totalVotes > 0 ? ((ctx.raw / totalVotes) * 100).toFixed(1) : '0';
+                                const percent = ((ctx.raw / totalVotes) * 100).toFixed(1);
                                 return `${ctx.raw} suara (${percent}%)`;
                             }
                         }
