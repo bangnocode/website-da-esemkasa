@@ -13,7 +13,7 @@
     <div class="block md:hidden">
         <h1 class="text-center text-red-600 font-semibold">
             Jika Anda Menggunakan HP, Gunakan Mode Desktop<br>
-            Atau Gunakan perangkat dengan resolusi 1024px ke atas (laptop/tablet/komputer).
+            Atau Gunakan perangkat dengan resolusi 768px ke atas (laptop/tablet/komputer).
         </h1>
     </div>
 
