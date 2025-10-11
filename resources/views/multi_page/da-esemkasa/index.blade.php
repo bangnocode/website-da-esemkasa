@@ -80,14 +80,42 @@
         <p class="text-center text-gray-600 mb-12 text-lg">Berita Tentang Informasi Terbaru Dari Organisasi Dewan
             Ambalan</p>
         <div class="grid gap-8 md:grid-cols-3">
-            <a href="{{ route('berita.kunjungan.piggi') }}"
-                class="bg-white p-6 rounded-xl shadow hover:shadow-xl hover:-translate-y-1 transition block">
-                <img src="{{ asset('img/da-esemkasa/galeri/da-piggi-2.webp') }}" loading="lazy" alt=""
-                    class="w-full rounded-lg shadow">
-                <h2 class="text-lg font-semibold mt-6">Kunjungan Edukatif Dewan Ambalan SMKN 1 Banyuwangi ke PIGGI Banyuwangi</h2>
-                <p class="text-sm text-gray-700 mt-4">Kegiatan ini menjadi bagian dari agenda pembelajaran luar sekolah yang bertujuan...</p>
-                <span class="block text-sm text-gray-500 mt-4">Jum'at, 10 Oktober 2025</span>
-            </a>
+            @php
+                use App\Models\ModelBerita;
+                use Illuminate\Support\Str;
+                use Carbon\Carbon;
+                Carbon::setLocale('id');
+                $beritas = ModelBerita::latest()->get();
+            @endphp
+
+            @forelse ($beritas as $berita)
+                <a href="{{ url('/berita/' . $berita->slug) }}" class="block">
+                    <article
+                        class="bg-white border rounded-lg shadow-md overflow-hidden hover:shadow-xl hover:scale-[1.02] transition-all duration-300">
+
+                        {{-- Thumbnail --}}
+                        <img src="{{ asset('storage/' . $berita->thumbnail) }}" alt="{{ $berita->judul }}"
+                            class="w-full h-48 object-cover">
+
+                        {{-- Isi Card --}}
+                        <div class="p-6 space-y-3">
+                            <h2 class="font-bold text-lg text-sky-900">
+                                {{ $berita->judul }}
+                            </h2>
+
+                            <p class="text-gray-700 text-sm leading-relaxed line-clamp-3">
+                                {!! Str::limit(strip_tags($berita->isi_berita), 80) !!}
+                            </p>
+
+                            <span class="block text-sm text-gray-500">
+                                {{ Carbon::parse($berita->tanggal)->translatedFormat('l, d F Y') }}
+                            </span>
+                        </div>
+                    </article>
+                </a>
+            @empty
+                <p class="text-gray-600">Belum ada berita.</p>
+            @endforelse
         </div>
         <div class="text-end mt-6">
             <a href="{{ url('/berita') }}" class="text-yellow-600 font-semibold hover:underline">Lainnya >></a>
